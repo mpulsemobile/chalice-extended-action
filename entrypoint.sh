@@ -8,6 +8,11 @@ fi
 if [ ! -z "$REQUIREMENTS_FILE" ]
 then
       pip install -r "$REQUIREMENTS_FILE" -t ./vendor
+else
+      if [ ! -z "Pipfile" ]
+      then
+            pipenv install --system --deploy --keep-outdated
+      fi
 fi
 
 if ! [ -z "$PROJECT_DIR" ]
