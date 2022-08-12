@@ -11,7 +11,7 @@ then
       pipenv requirements > "$REQUIREMENTS_FILE"
 fi
 
-if [ -z "$REQUIREMENTS_FILE" ]
+if [ ! -z "$REQUIREMENTS_FILE" ]
 then
       pip install -r "$REQUIREMENTS_FILE" -t ./vendor
 fi
