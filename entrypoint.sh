@@ -11,7 +11,7 @@ then
 else
       if [ ! -z "Pipfile" ]
       then
-            pipenv install --system --deploy --keep-outdated
+            pipenv run pip install -r <(pipenv lock -r) --target dist/
       fi
 fi
 
