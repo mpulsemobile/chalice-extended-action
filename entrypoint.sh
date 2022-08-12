@@ -5,14 +5,13 @@ then
       cd "$WORKING_DIRECTORY"
 fi
 
-if [ ! -z "$REQUIREMENTS_FILE" ]
-then
+if [ ! -z "Pipfile" ]
+      REQUIREMENTS_FILE="requirements.txt"
+      pipenv requirements > "$REQUIREMENTS_FILE"
+fi
+
+if [ -z "$REQUIREMENTS_FILE" ]
       pip install -r "$REQUIREMENTS_FILE" -t ./vendor
-else
-      if [ ! -z "Pipfile" ]
-      then
-            pipenv run pip install -r <(pipenv lock -r) --target dist/
-      fi
 fi
 
 if ! [ -z "$PROJECT_DIR" ]
