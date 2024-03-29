@@ -16,7 +16,8 @@ fi
 if [ ! -z "$REQUIREMENTS_FILE" ]
 then
       echo "Installing Dependencies using pip -r $REQUIREMENTS_FILE"
-      pip install -r "$REQUIREMENTS_FILE" -t ./vendor
+      command="pip install -r $REQUIREMENTS_FILE -t ./vendor"
+      eval $command
 fi
 
 if ! [ -z "$PROJECT_DIR" ]
