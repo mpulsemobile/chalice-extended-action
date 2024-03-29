@@ -1,5 +1,7 @@
 #!/bin/sh -l
 
+set -o xtrace
+
 if [ ! -z "$WORKING_DIRECTORY" ]
 then
       cd "$WORKING_DIRECTORY"
@@ -13,6 +15,7 @@ fi
 
 if [ ! -z "$REQUIREMENTS_FILE" ]
 then
+      echo "Installing Dependencies using pip -r $REQUIREMENTS_FILE"
       pip install -r "$REQUIREMENTS_FILE" -t ./vendor
 fi
 
