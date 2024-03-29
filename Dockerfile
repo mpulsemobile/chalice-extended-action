@@ -8,6 +8,6 @@ LABEL maintainer="Chris Oh <chris@5tigerjelly.com> (https://5tigerjelly.com)"
 COPY entrypoint.sh /entrypoint.sh
 
 RUN pip install --upgrade pip
-RUN pip install chalice pipenv
+RUN pip install chalice pipenv boto3
 
 ENTRYPOINT ["/entrypoint.sh"]
